@@ -1,0 +1,18 @@
+filebeat.modules:
+- module: system
+  syslog:
+    enabled: false
+  auth:
+    enabled: true
+    var.paths: ["D:\\Git\\my_dsio\\data\\auth.log"]
+name: test
+output.elasticsearch:
+  # Array of hosts to connect to.
+  hosts: ["localhost:9200"]
+  # Optional protocol and basic auth credentials.
+  #protocol: "https"
+  username: "elastic"
+  password: "9hEQEXjKP3JPkSbPtAhD"
+  index: "filebeat"
+logging.level: debug
+logging.selectors: ["publish"]
